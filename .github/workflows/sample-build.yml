@@ -1,0 +1,15 @@
+name: Sample Build
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - name: Run Sample
+        run: python app.py | tee sample-output.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: sample-output
+          path: sample-output.txt

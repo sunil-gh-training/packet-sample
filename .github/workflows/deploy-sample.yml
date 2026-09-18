@@ -1,0 +1,11 @@
+name: Deploy Sample
+on:
+  workflow_dispatch:
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - uses: action/checkout@v4
+      - name: Deploy
+        run: echo "Deployed comit ${{github.sh}} to staging"

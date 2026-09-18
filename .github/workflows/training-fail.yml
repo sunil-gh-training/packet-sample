@@ -1,0 +1,16 @@
+name: Training Fail Sample
+on:
+  push:
+    branches: [seed/failed-run]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v4
+      - name: Check output label
+        run: |
+          echo "Comparinf documented label with source file..."
+          echo "README document Result:"
+          echo "app.py return:   Output:"
+          echo "ERROR: label mismatch - expected 'Result:' but found  'Output:' in app.py" 
+          exit 1
