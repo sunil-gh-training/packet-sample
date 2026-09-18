@@ -6,6 +6,6 @@ jobs:
     runs-on: ubuntu-latest
     environment: staging
     steps:
-      - uses: action/checkout@v4
+      - uses: actions/checkout@v4
       - name: Deploy
-        run: echo "Deployed comit ${{github.sh}} to staging"
+        run: echo "Deployed commit ${{ github.sha }} to staging"

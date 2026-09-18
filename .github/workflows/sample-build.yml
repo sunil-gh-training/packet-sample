@@ -5,8 +5,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v4
-      - name: Run Sample
+      - uses: actions/checkout@v4
+      - name: Run sample
         run: python app.py | tee sample-output.txt
       - name: Upload artifact
         uses: actions/upload-artifact@v4
